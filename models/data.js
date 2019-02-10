@@ -1,4 +1,4 @@
-var mongoose = require (''); 
+var mongoose = require ('mongoose'); 
 
 //data schema
 

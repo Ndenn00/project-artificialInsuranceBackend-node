@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon app.js",
+    "test": "mocha"
   },
   "dependencies": {
     "body-parser": "*",
@@ -16,6 +17,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.10"
   }
 }
