@@ -1,4 +1,4 @@
-var quote = require('../config/helper/quote'); 
+var quote = require('../config/utility/quote'); 
 var expect = require('chai').expect;
 
 describe('#quote()', function(){
