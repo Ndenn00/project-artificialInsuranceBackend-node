@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 module.exports = {
     
     returnsOne: function (){
@@ -6,6 +8,12 @@ module.exports = {
 
     basePrice: function(){
         return 400;
+    },
+
+    differenceInYears: function(date){
+        var years = moment().diff(date, 'years', false);
+        
+        return years;
     }
 
 }
