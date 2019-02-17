@@ -9,10 +9,3 @@ describe('#quote()', function () {
 
 
 
-// describe('#quote()', function () {
-//   context('finds properties', function () {
-//     it('finds the age property', function () {
-     
-//     })
-//   })
-//)

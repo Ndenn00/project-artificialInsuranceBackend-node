@@ -5,5 +5,4 @@ module.exports = {
         var years = moment().diff(date, 'years', false);
         return years;
     }
-
 }

@@ -131,7 +131,7 @@ var dataSchema = mongoose.Schema({
 var Data = module.exports = mongoose.model('Genre', dataSchema); 
 
 // Get data
-module.exports.getData = function(callback, limit){
+module.exports.getQuote = function(callback, limit){
     Data.find(callback).limit(limit); 
 
 }

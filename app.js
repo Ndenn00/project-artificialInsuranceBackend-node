@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 
 Data = require('./models/data')
 
-mongoose.connect('mongodb://localhost/artins', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost/testDB', { useNewUrlParser: true }); 
 var db = mongoose.connection; 
 
 var apiRouter = require('./routes/api');
