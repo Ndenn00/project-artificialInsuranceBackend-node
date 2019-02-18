@@ -3,14 +3,17 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose'); 
 
-Data = require('./models/data')
 
-mongoose.connect('mongodb://localhost/testDB', { useNewUrlParser: true }); 
+//TestDB vs QuoteDB
+// Data = require('./models/data')
+// mongoose.connect('mongodb://localhost/testDB', { useNewUrlParser: true }); 
+Data = require('./models/quoteData')
+mongoose.connect('mongodb://localhost/quoteDB', { useNewUrlParser: true });
 var db = mongoose.connection; 
+
 
 var apiRouter = require('./routes/api');
 app.use(bodyParser.json());
-
 app.use('/api', apiRouter);
 
 

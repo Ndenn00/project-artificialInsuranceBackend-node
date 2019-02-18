@@ -2,7 +2,7 @@ var mongoose = require ('mongoose');
 
 //data schema
 
-var dataSchema = mongoose.Schema({
+var quoteSchema = mongoose.Schema({
     title: {
         type: String,
         required: true
@@ -16,7 +16,7 @@ var dataSchema = mongoose.Schema({
         required: true
     },
     dateOfBirth:{
-        type: Date,
+        type: String,
         required: true
     },
     gender:{
@@ -27,7 +27,7 @@ var dataSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    social:{
+    ssid:{
         type: String,
         required: true
     },
@@ -36,10 +36,6 @@ var dataSchema = mongoose.Schema({
         required: true
     },
     licenceNumber:{
-        type: String,
-        required: true
-    },
-    firstName:{
         type: String,
         required: true
     },
@@ -119,7 +115,7 @@ var dataSchema = mongoose.Schema({
         required: true 
     },
     dateQuoted:{
-        type: Date,
+        type: String,
         required: true
     },
     referenceId:{
@@ -128,11 +124,15 @@ var dataSchema = mongoose.Schema({
     }
 }); 
 
-var Data = module.exports = mongoose.model('Genre', dataSchema); 
+var Quote = module.exports = mongoose.model('Quote', quoteSchema, 'quotes'); 
 
-// Get data
+// Get
 module.exports.getQuote = function(callback, limit){
-    Data.find(callback).limit(limit); 
+    Quote.find(callback).limit(limit); 
+}
 
+//Post
+module.exports.addQuote = function(quote, callback){
+    Quote.create(quote, callback); 
 }
 

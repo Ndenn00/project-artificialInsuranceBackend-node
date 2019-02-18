@@ -1,9 +1,10 @@
 var express = require('express');
-var router = express.Router();
+var router = express();
 var quoteUtility = require('../config/utility/quoteUtility')
 var bodyParser = require('body-parser');
 Test = require('../models/test')
-var errorJson = require('../models/json/error')
+Quote = require('../models/quoteData')
+router.use(bodyParser.json());
 
 
 router.get('/', function(req, res){
@@ -25,6 +26,27 @@ router.get('/tests/:_id', function(req, res){
             throw err; 
         }
         res.json(test); 
+    });
+});
+
+router.post('/quotes', function(req,res){
+    var quote = req.body;
+
+    Quote.addQuote(quote, function(err, quote){
+        if(err){
+            throw err;
+        }
+        console.log('success')
+        res.json(quote); 
+    })
+})
+
+router.get('/quotes', function(req, res){
+    Quote.getQuote(function(err, quote){
+        if(err){
+            throw err; 
+        }
+        res.json(quote); 
     });
 });
 
