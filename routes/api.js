@@ -37,7 +37,6 @@ router.post('/quotes', function(req,res){
     var date =  new Date();
    
     quote.totalPrice = priceUtility.generateTotalPrice(quote); 
-    
     quote.referenceId = idGenerator.generateId(); 
     quote.dateQuoted = date;
 
