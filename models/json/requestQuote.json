@@ -20,6 +20,7 @@
     "carModel": "test",
     "carYear": "test",
     "carMiles": 1,
+    "carVin" : "test",
     "primaryUse": true,
     "ownOrLease": "test",
     "lengthOfOwnership": "test",
