@@ -1,4 +1,4 @@
-var mongoose = require ('mongoose'); 
+var mongoose = require('mongoose');
 
 //data schema
 
@@ -6,133 +6,137 @@ var quoteSchema = mongoose.Schema({
     title: {
         type: String,
         required: true
-    }, 
-    firstName:{
-        type: String,
-        required: true
-    }, 
-    lastName:{
+    },
+    firstName: {
         type: String,
         required: true
     },
-    dateOfBirth:{
+    lastName: {
         type: String,
         required: true
     },
-    gender:{
+    dateOfBirth: {
         type: String,
         required: true
     },
-    maritalStatus:{
+    gender: {
         type: String,
         required: true
     },
-    ssid:{
+    maritalStatus: {
         type: String,
         required: true
     },
-    occupation:{
+    ssid: {
         type: String,
         required: true
     },
-    licenceNumber:{
+    occupation: {
         type: String,
         required: true
     },
-    yearsHeld:{
+    licenceNumber: {
+        type: String,
+        required: true
+    },
+    yearsHeld: {
         type: Number,
         required: true
     },
-    fid:{
+    fid: {
         type: String,
         required: true
     },
-    city:{
+    city: {
         type: String,
         required: true
     },
-    state:{
+    state: {
         type: String,
         required: true
     },
-    zip:{
+    zip: {
         type: String,
         required: true
     },
-    phone:{
+    phone: {
         type: String,
         required: true
     },
-    email:{
+    email: {
         type: String,
         required: true
     },
-    previousAddress:{
+    previousAddress: {
         type: String,
     },
-    carMake:{
-        type: String,
-        required: true
-    },
-    carModel:{
+    carMake: {
         type: String,
         required: true
     },
-    carYear:{
+    carModel: {
         type: String,
         required: true
     },
-    carMiles:{
+    carYear: {
+        type: String,
+        required: true
+    },
+    carMiles: {
         type: Number,
         required: true
     },
-    primaryUse:{
+    primaryUse: {
         type: Boolean,
         required: true
     },
-    ownOrLease:{
+    ownOrLease: {
         type: String,
         required: true
     },
-    lengthOfOwnership:{
+    lengthOfOwnership: {
         type: String,
         required: true
     },
-    cover:{
+    cover: {
         type: Array,
         required: false
     },
-    previousAccidents:{
+    previousAccidents: {
         type: String,
         required: true
     },
-    accidentWithinFiveYears:{
+    accidentWithinFiveYears: {
         type: Boolean,
         required: true
     },
-    totalPrice:{
+    totalPrice: {
         type: Number,
-        required: true 
+        required: true
     },
-    dateQuoted:{
+    dateQuoted: {
         type: String,
         required: true
     },
-    referenceId:{
+    referenceId: {
         type: String,
         required: true
     }
-}); 
+});
 
-var Quote = module.exports = mongoose.model('Quote', quoteSchema, 'quotes'); 
+var Quote = module.exports = mongoose.model('Quote', quoteSchema, 'quotes');
 
-// Get
-module.exports.getQuote = function(callback, limit){
-    Quote.find(callback).limit(limit); 
+// Get All
+module.exports.getQuote = function (callback, limit) {
+    Quote.find(callback).limit(limit);
+}
+
+//Get One
+module.exports.getQuoteByRef = function (ref, callback) {
+    Quote.findOne({'referenceId': ref}, callback);
 }
 
 //Post
-module.exports.addQuote = function(quote, callback){
-    Quote.create(quote, callback); 
+module.exports.addQuote = function (quote, callback) {
+    Quote.create(quote, callback);
 }
-
