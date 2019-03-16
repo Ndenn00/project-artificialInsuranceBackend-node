@@ -1,11 +1,7 @@
 var express = require('express');
 var router = express();
-var quoteUtility = require('../config/utility/quoteUtility');
-var priceUtility = require('../config/utility/priceUtility');
-var idGenerator = require('../config/utility/basicRandomIdGenerator');
 var bodyParser = require('body-parser');
 
-Test = require('../models/test')
 Quote = require('../models/quoteData')
 router.use(bodyParser.json());
 
@@ -16,8 +12,8 @@ router.get('/', function (req, res) {
 
 
 router.post('/quotes', function (req, res) {
-    var quote = req.body;
-    Quote.addQuote(quote, function (err, quote) {
+    var givenQuote = req.body;
+    Quote.addQuote(givenQuote, function (err, quote) {
         if (err) {
             throw err;
         }
@@ -31,7 +27,12 @@ router.get('/quotes', (req, res) => {
         if (err) {
             throw err;
         }
-        res.json(quote);
+        if(!quote){
+            res.status(404)        
+            .send('Not found');
+        } else {
+            res.json(quote);
+        }
     });
 });
 
@@ -40,7 +41,13 @@ router.get('/quotes/:ref', (req, res) => {
         if (err) {
             throw err;
         }
-        res.json(quote);
+        if(!quote){
+            res.status(404)        
+            .send('Not found');
+        } else {
+            res.json(quote);
+        }
+        
     });
 });
 
