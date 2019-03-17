@@ -2,17 +2,12 @@ var express = require('express');
 var router = express();
 var bodyParser = require('body-parser');
 
-const path = require('path');
-app.use(express.static(path.join(__dirname, 'client/build')))
-
 Quote = require('../models/quoteData')
 router.use(bodyParser.json());
-
 
 router.get('/', function (req, res) {
     res.send('Hello World Again')
 });
-
 
 router.post('/quotes', function (req, res) {
     var givenQuote = req.body;
@@ -20,7 +15,6 @@ router.post('/quotes', function (req, res) {
         if (err) {
             throw err;
         }
-        console.log('success')
         res.json(quote);
     })
 })
