@@ -62,31 +62,31 @@ describe('#ageCalculation', function () {
 
         assert.typeOf(actual, 'number', 'is a type of number')
       }),
-      it('takes base price 400 and age 17, returns 440', function () {
-        var expected = 440;
+      it('takes base price 400 and age 17, returns 40', function () {
+        var expected = 40;
         var actual = quoteUtility.ageCalculation('2002-01-01', 400);
 
         assert.equal(actual, expected, 'are equal');
       }),
-      it('takes base price of 400 and age 26, returns 420', function () {
-        var expected = 420;
+      it('takes base price of 400 and age 26, returns 20', function () {
+        var expected = 20;
         var actual = quoteUtility.ageCalculation('1993-01-01', 400);
 
         assert.equal(actual, expected, 'are equal');
       }),
-      it('takes base price of 400 and age 61, returns 440', function () {
-        var expected = 440;
+      it('takes base price of 400 and age 61, returns 40', function () {
+        var expected = 40;
         var actual = quoteUtility.ageCalculation('1948-01-01', 400);
 
         assert.equal(actual, expected, 'are equal');
       }),
-      it('takes a base price of 500 at age 17, returns 550', function () {
-        var expected = 550;
+      it('takes a base price of 500 at age 17, returns 50', function () {
+        var expected = 50;
         var actual = quoteUtility.ageCalculation('2002-01-01', 500);
         assert.equal(actual, expected, 'are equal');
       }),
-      it('takes a base price of 500 at age 26, returns 525', function () {
-        var expected = 525;
+      it('takes a base price of 500 at age 26, returns 25', function () {
+        var expected = 25;
         var actual = quoteUtility.ageCalculation('1993-01-01', 500);
         assert.equal(actual, expected, 'are equal');
       })
@@ -120,23 +120,23 @@ describe('#drivingExperienceCalculation()', function () {
       })
     }),
     context('when given years driving experience and a base price', function () {
-      it('returns 440 when given 1 year and a base price of 400', function () {
-          var expected = 440;
+      it('returns 40 when given 1 year and a base price of 400', function () {
+          var expected = 40;
           var actual = quoteUtility.drivingExperienceCalculation(1, 400);
           assert.equal(actual, expected, 'are equal');
         }),
-        it('returns 420 when given 5 years and a base price of 400', function () {
-          var expected = 420;
+        it('returns 20 when given 5 years and a base price of 400', function () {
+          var expected = 20;
           var actual = quoteUtility.drivingExperienceCalculation(6, 400);
           assert.equal(actual, expected, 'are equal');
         }),
-        it('returns 404 when given 31 years and a base price of 400', function () {
-          var expected = 404;
+        it('returns 4 when given 31 years and a base price of 400', function () {
+          var expected = 4;
           var actual = quoteUtility.drivingExperienceCalculation(31, 400);
           assert.equal(actual, expected, 'are equal');
         }),
-        it('returns 420 when given 45 years and a base price of 400', function () {
-          var expected = 420;
+        it('returns 20 when given 45 years and a base price of 400', function () {
+          var expected = 20;
           var actual = quoteUtility.drivingExperienceCalculation(45, 400);
           assert.equal(actual, expected, 'are equal');
         })

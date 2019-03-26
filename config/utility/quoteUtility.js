@@ -10,39 +10,37 @@ module.exports = {
         var age = dateUtility.differenceInYears(birthDate);
 
         if (age >= 17 && age <= 25) {
-            return Math.round(basePrice *= 1.1);
+            return Math.round(basePrice *= 0.1);
         }
         if (age >= 26 && age <= 60) {
-            return Math.round(basePrice *= 1.05);
+            return Math.round(basePrice *= 0.05);
         }
         if (age >= 61 && age <= 80) {
-            return 440;
+            return Math.round(basePrice *= 0.1);
         }
-        if (age > 80) {
-            throw new Error("Age not accepted")
-        }
-        return basePrice;
+     
+        return 0;
     },
 
     drivingExperienceCalculation: function (drivingExperienceInYears, basePrice) {
 
         if (drivingExperienceInYears >= 0 && drivingExperienceInYears <= 5) {
-            return Math.round(basePrice *= 1.1);
+            return Math.round(basePrice *= 0.1);
         }
 
         if (drivingExperienceInYears >= 6 && drivingExperienceInYears <= 30) {
-            return Math.round(basePrice *= 1.05);
+            return Math.round(basePrice *= 0.05);
         }
 
         if (drivingExperienceInYears >= 31 && drivingExperienceInYears <= 44) {
-            return Math.round(basePrice *= 1.01);
+            return Math.round(basePrice *= 0.01);
         }
 
         if (drivingExperienceInYears >= 45) {
-            return Math.round(basePrice *= 1.05);
+            return Math.round(basePrice *= 0.05);
         }
 
-        return basePrice(); 
+        return 0; 
     },
 
     vinCalculation: function (vinNumber) {
